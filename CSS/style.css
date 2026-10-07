@@ -1,0 +1,594 @@
+/* ==================================================
+   1. VARIÁVEIS DO PROJETO (CORES E FONTES)
+================================================== */
+:root {
+    /* Paleta Principal */
+    --cor-vinho: #6B1C2A;
+    --cor-vinho-escuro: #4A101A;
+    --cor-dourado: #D4AF37;
+    --cor-dourado-claro: #F9E596;
+    --cor-off-white: #FAF9F6;
+
+    /* Cores Terrosas */
+    --cor-terra-clara: #E8D3C3;
+    --cor-terra-media: #A86A51;
+    --cor-terra-escura: #5C4033;
+
+    /* Neutras */
+    --cor-texto: #333333;
+    --cor-fundo-card: #FFFFFF;
+}
+
+
+/* ==================================================
+   2. RESET E ESTILOS GERAIS
+================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--cor-vinho-escuro);
+}
+
+body {
+    background-color: var(--cor-off-white);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    /* Faz a página ocupar toda a altura da tela */
+    min-height: 100vh;
+    /* Organiza a página verticalmente */
+    display: flex;
+    flex-direction: column;
+    /* Impede barras horizontais */
+    overflow-x: hidden;
+}
+
+main {
+    padding: 3rem 5%;
+    max-width: 1280px;
+    margin: 0 auto;
+    /* Ocupa o espaço disponível */
+    flex: 1;
+    width: 100%;
+}
+
+
+/* ==================================================
+   3. TIPOGRAFIA GERAL
+================================================== */
+h2 {
+    font-family: 'Georgia', serif;
+    color: var(--cor-vinho-escuro);
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-family: 'Georgia', serif;
+    color: var(--cor-terra-media);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.titulo-secao {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.titulo-secao h2 {
+    color: var(--cor-vinho-escuro);
+}
+
+
+/* ==================================================
+   4. CABEÇALHO E NAVEGAÇÃO
+================================================== */
+header {
+    background: linear-gradient(
+        135deg,
+        var(--cor-vinho-escuro) 0%,
+        var(--cor-vinho) 100%
+    );
+
+    color: var(--cor-off-white);
+    padding: 1.2rem 5%;
+    border-bottom: 4px solid var(--cor-dourado);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+/* Bloco de texto */
+.cabecalho-texto {
+    margin-right: auto;
+    text-align: left;
+}
+
+
+/* Título principal */
+.cabecalho h1,
+.cabecalho-texto h1 {
+    font-family: 'Georgia', serif;
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: var(--cor-dourado-claro);
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    letter-spacing: 1.5px;
+    text-align: left;
+}
+
+
+/* Subtítulo */
+.cabecalho-texto h2 {
+    font-family: 'Georgia', serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--cor-terra-clara);
+    margin-top: 0.3rem;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+
+/* ==================================================
+   5. MENU DE NAVEGAÇÃO
+================================================== */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+nav ul li a {
+    color: var(--cor-off-white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: 2px solid transparent;
+}
+
+
+/* Hover do menu */
+nav ul li a:hover {
+    color: var(--cor-vinho-escuro);
+    background-color: var(--cor-dourado-claro);
+    border-color: var(--cor-dourado);
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
+    transform: translateY(-2px);
+}
+
+
+/* ==================================================
+   6. SEÇÃO INICIAL / HERO
+================================================== */
+.inicio {
+    background: linear-gradient(
+        135deg,
+        var(--cor-terra-clara) 0%,
+        #F5EAE1 100%
+    );
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+    padding: 3rem;
+    border-radius: 16px;
+    border: 2px solid var(--cor-dourado);
+    box-shadow: 0 10px 25px rgba(107, 28, 42, 0.1);
+}
+
+.inicio-conteudo {
+    flex: 1 1 300px;
+}
+
+.inicio-conteudo h2 {
+    color: var(--cor-vinho-escuro);
+}
+
+.inicio-conteudo p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: var(--cor-terra-escura);
+}
+
+.inicio-imagem {
+    flex: 1 1 300px;
+}
+
+.inicio-imagem img {
+    width: 100%;
+    border-radius: 12px;
+    border: 4px solid var(--cor-vinho);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ==================================================
+   7. CARDS DOS SETORES
+================================================== */
+.cards-setores {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.card-setor {
+    flex: 1 1 200px;
+    background-color: var(--cor-fundo-card);
+    padding: 2rem 1rem;
+    text-align: center;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--cor-vinho-escuro);
+    border: 1px solid var(--cor-terra-clara);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.card-setor h3 {
+    color: var(--cor-vinho-escuro);
+}
+
+.card-setor p {
+    font-weight: 600;
+    margin-top: 0.5rem;
+    color: var(--cor-terra-media);
+}
+
+.card-setor:hover {
+    transform: translateY(-5px);
+    background-color: var(--cor-vinho);
+    border-color: var(--cor-dourado);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+}
+
+.card-setor:hover h3,
+.card-setor:hover p {
+    color: var(--cor-dourado-claro);
+}
+
+
+/* ==================================================
+   8. HISTÓRIA E SOBRE O PROJETO
+================================================== */
+.historia-destaque {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    background-color: var(--cor-fundo-card);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 3rem;
+    border-left: 6px solid var(--cor-dourado);
+}
+
+.historia-imagem {
+    flex: 1 1 250px;
+}
+
+.historia-imagem img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.historia-conteudo {
+    flex: 2 1 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sobre-projeto p {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+
+/* ==================================================
+   9. DEPARTAMENTOS E CARDS DE INTEGRANTES
+================================================== */
+.introducao-departamento {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+}
+
+.cards-mulheres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.card-mulher {
+    flex: 1 1 280px;
+    background-color: var(--cor-fundo-card);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    border-top: 5px solid var(--cor-dourado);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.card-mulher:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(107, 28, 42, 0.15);
+}
+
+.card-mulher img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--cor-dourado);
+}
+
+.card-conteudo {
+    padding: 1.5rem;
+}
+
+.card-conteudo h3 {
+    color: var(--cor-vinho);
+    margin-bottom: 0.2rem;
+}
+
+.funcao {
+    font-weight: bold;
+    color: var(--cor-terra-media);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+blockquote {
+    font-style: italic;
+    color: var(--cor-terra-escura);
+    border-left: 4px solid var(--cor-dourado);
+    background-color: #FAF4EF;
+    padding: 1rem;
+    border-radius: 0 8px 8px 0;
+    margin-top: 1rem;
+}
+
+
+/* ==================================================
+   10. FOOTER
+================================================== */
+footer {
+    background: linear-gradient(
+        135deg,
+        #241216 0%,
+        #160D10 55%,
+        #0D090A 100%
+    );
+
+    color: var(--cor-off-white);
+    padding: 2rem 5% 1rem;
+    margin-top: 2rem;
+    border-top: 3px solid var(--cor-dourado);
+    text-align: center;
+}
+
+
+/* Títulos do footer */
+footer h2,
+footer h4 {
+    font-family: 'Georgia', serif;
+    color: var(--cor-dourado);
+    margin-bottom: 0.4rem;
+}
+
+footer h2 {
+    font-size: 1.5rem;
+}
+
+footer h4 {
+    font-size: 1.1rem;
+}
+
+
+/* Conteúdo do footer */
+.footer-conteudo {
+    max-width: 850px;
+    margin: 0 auto 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+
+/* Área do projeto */
+.footer-projeto {
+    flex: 1 1 280px;
+    max-width: 450px;
+}
+
+
+/* Área das informações */
+.footer-info {
+    flex: 0 1 220px;
+}
+
+.footer-info p {
+    color: #C8B8B5;
+    font-size: 0.85rem;
+    margin-bottom: 0.15rem;
+}
+
+.italico {
+    font-style: italic;
+}
+
+/* Parte inferior */
+.footer-final {
+    max-width: 850px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    padding-top: 0.8rem;
+    text-align: center;
+    color: #AFA09D;
+    font-size: 0.8rem;
+}
+
+
+/* ==================================================
+   11. RESPONSIVIDADE - TABLETS
+================================================== */
+@media (max-width: 768px) {
+
+    /* Cabeçalho */
+    .cabecalho {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .cabecalho-texto {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .cabecalho h1,
+    .cabecalho-texto h1 {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+
+    .cabecalho-texto h2 {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+
+    /* Menu */
+    nav ul {
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    nav ul li a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.88rem;
+    }
+
+
+    /* Seção inicial */
+    .inicio {
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+    /* Títulos */
+    h2 {
+        font-size: 1.8rem;
+    }
+    /* Main */
+    main {
+        padding: 2rem 4%;
+    }
+    /* Footer */
+    footer {
+        padding: 1.8rem 5% 1rem;
+    }
+    .footer-conteudo {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    .footer-projeto,
+    .footer-info {
+        flex: none;
+        width: 100%;
+        max-width: 450px;
+    }
+}
+
+
+/* ==================================================
+   12. RESPONSIVIDADE - CELULARES
+================================================== */
+@media (max-width: 480px) {
+    /* Cabeçalho */
+    .cabecalho h1,
+    .cabecalho-texto h1 {
+        font-size: 1.8rem;
+    }
+    .cabecalho-texto h2 {
+        font-size: 0.9rem;
+    }
+    /* Menu */
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+    nav ul li a {
+        width: 100%;
+    }
+    /* Seção inicial */
+    .inicio {
+        padding: 1.2rem;
+    }
+    .inicio-conteudo p {
+        font-size: 1rem;
+    }
+    /* Footer */
+    footer {
+        padding: 1.5rem 6% 0.8rem;
+    }
+    .footer-conteudo {
+        gap: 1rem;
+    }
+    footer h2 {
+        font-size: 1.3rem;
+    }
+    footer h4 {
+        font-size: 1rem;
+    }
+    .footer-final {
+        font-size: 0.75rem;
+        padding-top: 0.7rem;
+    }
+}
